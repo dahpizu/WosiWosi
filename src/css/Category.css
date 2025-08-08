@@ -1,0 +1,196 @@
+.category-page {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f9f4;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(6, 95, 70, 0.1);
+  color: #064e3b;
+  user-select: none;
+}
+
+.category-page h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #065f46;
+  text-transform: capitalize;
+}
+
+.category-page p {
+  font-size: 1.2rem;
+  color: #374151;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Vendor list grid */
+.vendor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.2rem;
+}
+
+/* Vendor card */
+.vendor-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.15);
+  padding: 1.6rem 1.2rem 2rem;
+  text-align: center;
+  color: #064e3b;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover and focus states */
+.vendor-card:hover,
+.vendor-card:focus-visible {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 36px rgba(16, 185, 129, 0.35);
+  background-color: #10b981;
+  color: #ffffff;
+  outline: none;
+}
+
+/* Image styling */
+.vendor-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease;
+}
+
+.vendor-card:hover img,
+.vendor-card:focus-visible img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* Vendor name */
+.vendor-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.6rem;
+  font-weight: 800;
+  user-select: text;
+}
+
+/* Ratings and category text */
+.vendor-card p {
+  margin: 0.25rem 0;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: text;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* Separate rating and category visually */
+.vendor-card p:first-of-type {
+  font-size: 1.1rem;
+  color: #059669;
+  letter-spacing: 0.02em;
+}
+
+.vendor-card:hover p:first-of-type {
+  color: #d1fae5;
+}
+
+.vendor-card p:last-of-type {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.vendor-card:hover p:last-of-type {
+  color: #d1fae5;
+}
+
+/* Responsive tweaks */
+/* Extra small devices (up to 420px) */
+@media (max-width: 420px) {
+  .category-page {
+    padding: 1.2rem 0.8rem;
+    max-width: 100%;
+  }
+
+  .category-page h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* One column but smaller cards */
+  .vendor-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .vendor-card {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .vendor-card img {
+    height: 90px;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+  }
+
+  .vendor-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .vendor-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small–medium devices (421px to 640px) */
+@media (min-width: 421px) and (max-width: 640px) {
+  .category-page {
+    padding: 1.5rem 1rem;
+    max-width: 95%;
+  }
+
+  .category-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Two smaller columns */
+  .vendor-list {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .vendor-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .vendor-card img {
+    height: 110px;
+    margin-bottom: 1rem;
+  }
+
+  .vendor-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .vendor-card p {
+    font-size: 0.9rem;
+  }
+}

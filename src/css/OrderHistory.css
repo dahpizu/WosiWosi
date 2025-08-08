@@ -1,0 +1,192 @@
+/* OrderHistory.css */
+
+.order-history-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.order-history-page h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.order-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  margin-bottom: 30px;
+  transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+  transform: scale(1.01);
+}
+
+.order-card h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.order-card p {
+  color: #666;
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.order-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.order-card ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.order-card ul li:last-child {
+  border-bottom: none;
+}
+
+.order-card strong {
+  color: #222;
+}
+
+.order-card button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.order-card button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .order-card {
+    padding: 16px;
+  }
+
+  .order-history-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .order-card button {
+    width: 100%;
+  }
+}
+
+/* Responsive enhancements for Order History */
+
+/* Tablets & small laptops (iPad Mini & Galaxy Fold unfolded) */
+@media (max-width: 1024px) {
+  .order-history-page {
+    max-width: 90%;
+    padding: 16px;
+  }
+
+  .order-history-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .order-card {
+    padding: 20px;
+  }
+}
+
+/* Large phones (~768px) */
+@media (max-width: 768px) {
+  .order-history-page {
+    margin: 20px auto;
+    padding: 14px;
+  }
+
+  .order-history-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .order-card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .order-card button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small phones & iPhone 14 Pro Max portrait (~480px) */
+@media (max-width: 480px) {
+  .order-history-page {
+    padding: 12px;
+  }
+
+  .order-history-page h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .order-card {
+    padding: 16px;
+  }
+
+  .order-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .order-card p,
+  .order-card ul li {
+    font-size: 0.9rem;
+  }
+
+  .order-card button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra-small screens (Galaxy Fold folded & older Android ~360px) */
+@media (max-width: 360px) {
+  .order-history-page {
+    padding: 10px;
+  }
+
+  .order-history-page h1 {
+    font-size: 1.2rem;
+  }
+
+  .order-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .order-card h3 {
+    font-size: 1rem;
+  }
+
+  .order-card p,
+  .order-card ul li {
+    font-size: 0.85rem;
+  }
+
+  .order-card button {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}

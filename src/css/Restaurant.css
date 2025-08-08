@@ -1,0 +1,368 @@
+/* Restaurant.css */
+
+.restaurant-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.restaurant-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.restaurant-container p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.restaurant-container img {
+  display: block;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 1rem auto 2rem auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.restaurant-container img:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #2980b9;
+}
+
+.menu-group {
+  margin-bottom: 2rem;
+}
+
+.menu-group h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #34495e;
+  border-left: 5px solid #3498db;
+  padding-left: 0.5rem;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fc;
+  margin-bottom: 12px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #e1f0ff;
+}
+
+.menu-item > div:first-child {
+  max-width: 60%;
+}
+
+.menu-item strong {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.menu-item p {
+  margin: 6px 0 0 0;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.menu-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-controls button.minusSign,
+.menu-controls button.additionsign,
+.menu-controls button.AddToCart {
+  background-color: #29b96c; /* calm blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(41, 128, 185, 0.3);
+}
+.menu-controls button.minusSign,
+.menu-controls button.additionsign {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.menu-controls button.AddToCart {
+  padding: 6px 18px;
+  margin-left: 10px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(22, 158, 78, 0.5);
+}
+
+.menu-controls button.minusSign:hover,
+.menu-controls button.additionsign:hover,
+.menu-controls button.AddToCart:hover {
+  background-color: #06783d; /* darker blue on hover */
+}
+
+.menu-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.menu-controls span {
+  min-width: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  user-select: none;
+}
+
+.cart-summary-container {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #01090e;
+}
+
+.cart-summary-container p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.cart-warning {
+  color: #48ae26; /* red */
+  font-weight: 700;
+}
+
+.cart-success {
+  color: #27ae60; /* green */
+  font-weight: 700;
+}
+
+.go-to-cart-button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.go-to-cart-button:hover:not(:disabled) {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.go-to-cart-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+.minusSign {
+  background-color: greenyellow;
+}
+
+/* Responsive tweaks for Restaurant Container */
+
+/* Large tablets & Galaxy Fold unfolded (~1024px) */
+@media (max-width: 1024px) {
+  .restaurant-container {
+    max-width: 90%;
+    padding: 1rem 1.5rem;
+  }
+
+  .restaurant-container h1 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .menu-group h3 {
+    font-size: 1.3rem;
+  }
+
+  .menu-item p {
+    font-size: 0.85rem;
+  }
+
+  .menu-controls button.AddToCart {
+    padding: 5px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Large phones & small tablets (~768px) */
+@media (max-width: 768px) {
+  .restaurant-container {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .restaurant-container h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu-group h3 {
+    font-size: 1.2rem;
+  }
+
+  .menu-item p {
+    font-size: 0.85rem;
+  }
+
+  .menu-controls button.minusSign,
+  .menu-controls button.additionsign {
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+
+  .menu-controls button.AddToCart {
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    margin-left: 8px;
+  }
+}
+
+/* Small phones & iPhone 14 Pro Max portrait (~480px) */
+@media (max-width: 480px) {
+  .restaurant-container {
+    padding: 0.7rem 1rem;
+  }
+
+  .restaurant-container h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .menu-group h3 {
+    font-size: 1.1rem;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .menu-item > div:first-child {
+    max-width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .menu-controls {
+    gap: 6px;
+  }
+
+  .menu-controls button.minusSign,
+  .menu-controls button.additionsign {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
+  }
+
+  .menu-controls button.AddToCart {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    margin-left: 6px;
+  }
+
+  .menu-controls span {
+    min-width: 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small screens like Galaxy Fold folded & budget Android (~360px) */
+@media (max-width: 360px) {
+  .restaurant-container {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .restaurant-container h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .menu-group h3 {
+    font-size: 1rem;
+  }
+
+  .menu-item {
+    padding: 8px 12px;
+  }
+
+  .menu-controls button.minusSign,
+  .menu-controls button.additionsign {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+  }
+
+  .menu-controls button.AddToCart {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+
+  .menu-controls span {
+    min-width: 18px;
+    font-size: 0.9rem;
+  }
+}
