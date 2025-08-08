@@ -148,7 +148,7 @@ function Home() {
         {!searchQuery && (
           <div className="see-more-container">
             <Link to="/restaurants" className="see-more-link">
-              See more restaurants →
+              See more Restaurants →
             </Link>
           </div>
         )}
@@ -171,7 +171,7 @@ function Home() {
               </div>
             ))
           ) : (
-            <p>No groceries found.</p>
+            <p>No grocery is found.</p>
           )}
         </div>
       </section>

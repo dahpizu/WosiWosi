@@ -27,7 +27,7 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
+        <Router basename="/WosiWosi">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
