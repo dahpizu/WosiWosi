@@ -31,7 +31,7 @@
   margin-bottom: 3.5rem;
   text-align: center;
   user-select: none;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* Section headings */
@@ -79,7 +79,7 @@ section > h2 {
   justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease,
     box-shadow 0.3s ease;
-  text-decoration: none;
+  text-decoration: none !important;
   box-sizing: border-box;
 }
 
@@ -202,7 +202,7 @@ section > h2 {
 .see-more-link {
   color: #059669;
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 1.1rem;
   padding: 0.6rem 1.4rem;
   border: 2px solid #059669;
@@ -217,7 +217,7 @@ section > h2 {
   background-color: #059669;
   color: white;
   outline: none;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 /* --- Responsive adjustments --- */

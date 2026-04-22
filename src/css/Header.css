@@ -87,24 +87,6 @@
 }
 /* src/css/Header.css */
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.header h2 {
-  font-size: 22px;
-  margin: 0;
-  color: #333;
-}
-
 .cart-icon-container {
   position: relative;
   cursor: pointer;
@@ -605,4 +587,43 @@
 .logout-btn,
 .cart-icon {
   color: white !important;
+}
+.typing-input::placeholder {
+  color: #999;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.header-search input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 280px;
+  transition: border 0.3s;
+}
+
+.header-search input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.header-search button {
+  margin-left: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header-search button:hover {
+  background-color: #0056b3;
 }

@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
-import localGovVendors from "../data/localGovVendors"; // updated import
+import localGovVendors from "../data/localGovVendors";
 import "../css/Header.css";
 
 function Header() {
@@ -16,12 +16,50 @@ function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const searchRef = useRef(null);
 
+  // Typing animation state
+  const typingPhrases = [
+    "Search for Foods...",
+    "Search for Restaurants...",
+    "Search for Items...",
+    "Search for Canteen",
+    "Search for Food Stuffs",
+    "Search for Medicine",
+    "Search for Electronics",
+  ];
+  const [placeholder, setPlaceholder] = useState("");
+  const [typingIndex, setTypingIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = typingPhrases[typingIndex];
+    const delay = isDeleting ? 50 : 100;
+
+    const timeout = setTimeout(() => {
+      setCharIndex((prev) => (isDeleting ? prev - 1 : prev + 1));
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        setIsDeleting(true);
+        return;
+      }
+
+      if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setTypingIndex((prev) => (prev + 1) % typingPhrases.length);
+        return;
+      }
+
+      setPlaceholder(currentPhrase.substring(0, charIndex));
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, typingIndex]);
+
   const handleLogout = () => {
     signout();
     navigate("/signin");
   };
 
-  // Flatten all restaurants from all LGAs into one array
   const allRestaurants = Object.values(localGovVendors).flatMap(
     (lga) => lga.restaurants || []
   );
@@ -34,12 +72,10 @@ function Header() {
     }
     const lowerTerm = searchTerm.toLowerCase();
 
-    // Find matching restaurants by name
     const matchedRestaurants = allRestaurants
       .filter((r) => r.name.toLowerCase().includes(lowerTerm))
       .map((r) => ({ type: "restaurant", name: r.name, id: r.id }));
 
-    // Find matching menu items by name
     let matchedMenuItems = [];
     allRestaurants.forEach((r) => {
       (r.menu || []).forEach((item) => {
@@ -106,7 +142,8 @@ function Header() {
       >
         <input
           type="text"
-          placeholder="Search meals or restaurants..."
+          className="typing-input"
+          placeholder={placeholder || " "}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           onFocus={() => {
