@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
-  base: "/WosiWosi/", // 👈 THIS is the fix
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/WosiWosi/" : "/",
   plugins: [react()],
-});
+}));
